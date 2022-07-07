@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        .ul-style{
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <!-- <ul>
+        <li>Tunisia</li>
+        <li>Jordan</li>
+        <li>Egypte</li>
+        <li>Algeria</li>
+    </ul> -->
+
+    <!-- <ul id="root"></ul> -->
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+        // const element = React.createElement(
+        //     "ul",
+        //     { id:"pays", style:{color:"red"}, className:"ul-style"},
+        //     React.createElement(
+        //         "li",
+        //         null,
+        //         "Tunisia"
+        //     ),
+        //     React.createElement(
+        //         "li",
+        //         null,
+        //         "Jordan"
+        //     ),
+        //     React.createElement(
+        //         "li",
+        //         null,
+        //         "Egypte"
+        //     ),
+        //     React.createElement(
+        //         "li",
+        //         null,
+        //         "Algeria"
+        //     )
+        // );
+
+        const element = (
+
+            <>
+                <h1>Liste des pays</h1>
+                <ul className="ul-style" id="pays" style={{color:"blue"}}>
+                    <li>Tunisia</li>
+                    <li>Jordan</li>
+                    <li>Egypte</li>
+                    <li>Algeria</li>    
+                </ul>
+            </>
+
+        );
+
+        ReactDOM.render(element,document.getElementById("root"));
+        
+    </script>
+
+    <!-- <ul id="root"></ul> -->
+
+    <!-- <script>
+
+        var elmli = document.createElement("li");
+        elmli.innerHTML= "Tunisa";
+
+        var elementUl = document.getElementById("root");
+
+        elementUl.appendChild(elmli);
+
+    </script> -->
+    
+</body>
+</html>
