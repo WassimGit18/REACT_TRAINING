@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script> 
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+
+    <div id="root"></div>
+
+
+    <script type="text/babel">
+
+        function Navbar(props){
+
+            return(
+                <>
+                    <div className="w3-container w3-teal">
+                        <h1>{props.title}</h1>
+                        <h1>{props.link}</h1>
+                    </div>
+                </>
+
+            )
+        }
+
+        function ImageItem(){
+
+            return(
+                <div className="w3-third">
+                    <img src="https://cdn.pixabay.com/photo/2015/12/01/20/28/road-1072823_960_720.jpg" style={{"width":"100%","minHeight":"200px"}} />
+                </div>
+            )
+        }
+
+        function Text(){
+
+            return(
+                <div className="w3-twothird w3-container">
+                    <h2>Monterosso</h2>
+                    <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                </div>
+            )
+        }
+
+        class Card extends React.Component{
+            render(){
+
+                return(
+                    <div className="w3-row w3-margin">
+                        <ImageItem />
+                        <Text />
+                    </div>
+
+                )
+            }
+        }
+
+        class Content extends React.Component{
+            render(){
+
+                return(
+                    <>  
+                    {console.log("Content::",this.props)}
+                        {this.props.title}
+                        <Card/>
+                        <Card/>
+                        <Card/>
+                        <Card/>
+                    </>
+
+                )
+            }
+        }
+
+        class Home extends React.Component{
+
+            render(){
+
+                return(
+
+                    <>
+&
+                        <Navbar title="Navbar" link="link1" />
+                        <Content title="Content"/>
+
+                    </>
+
+                )
+
+            }
+
+        }
+
+       
+        ReactDOM.render(<Home />,document.getElementById("root"));
+
+    </script> 
+    
+</body>
+</html>
